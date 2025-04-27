@@ -29,22 +29,11 @@ To determine whether **daily news sentiment** has a predictive or explanatory im
 
 ## Order to Run
 
-### Full Step-by-Step (recommended):
 ```bash
 python news_date.py
 python snp_date.py
 python sentimentscore.py
 python merge_date.py
-python plot.py
-python new_plot.py
-python future_price_prediction.py
-```
-
-### Shortcut:
-```bash
-python news_date.py
-python snp_date.py
-python sp500plus.py
 python plot.py
 python new_plot.py
 python future_price_prediction.py
