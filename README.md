@@ -56,7 +56,7 @@ python plot.py
 - `pandas` for data cleaning and manipulation
 - `matplotlib` for plotting
 - `scikit-learn` for linear regression modeling
--  `nltk (VADER) for sentiment analysis
+-  `nltk` (VADER) for sentiment analysis
 
 ---
 
