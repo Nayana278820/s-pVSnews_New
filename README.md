@@ -71,8 +71,8 @@ python plot.py
 6. **Run linear regression** to measure how well sentiment predicts stock movement
 7. **Cluster and correlate** news sentiment with future S&P 500 movements
 8. **Evaluate** 
-first graphs: using regression coefficients and R² score
-second graphs: using Pearson correlation and KMeans cluster groupings
+- first graphs: using regression coefficients and R² score
+- second graphs: using Pearson correlation and KMeans cluster groupings
 
 
 ---
