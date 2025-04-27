@@ -24,8 +24,8 @@ To determine whether **daily news sentiment** has a predictive or explanatory im
 | `sp_500_sentiment.csv` | Final merged dataset containing S&P 500 market data along with average daily news sentiment. |
 | `plot.py` | Analyzes and visualizes the relationship between news sentiment and future S&P 500 price changes using clustering and correlation analysis. |
 | `sp500PlusSentiment.py` | (Alternative shortcut) Calculates sentiment and merges it with stock data directly in one step (use instead of `sentimentscore.py` + `merge_date.py` if preferred). |
-
-
+| `future_price_prediction.py` | Analyzes and visualizes the relationship between news sentiment and future S&P 500 price changes using clustering and correlation analysis. |
+| `new_plot.py` | Visualizes sentiment vs market behavior year-by-year and overall. |
 
 ## Order to Run
 
@@ -36,6 +36,8 @@ python snp_date.py
 python sentimentscore.py
 python merge_date.py
 python plot.py
+python new_plot.py
+python future_price_prediction.py
 ```
 
 ### Shortcut:
@@ -44,8 +46,10 @@ python news_date.py
 python snp_date.py
 python sp500plus.py
 python plot.py
+python new_plot.py
+python future_price_prediction.py
 ```
-### *Running just plot.py should be enough to see the correlation*
+### *Running just plot.py and new_plot.py should be enough to see the different correlation graphs*
 
 
 ---
