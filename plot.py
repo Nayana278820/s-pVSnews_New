@@ -1,66 +1,3 @@
-# import pandas as pd
-# import matplotlib.pyplot as plt
-# import numpy as np
-# from sklearn.cluster import KMeans
-# from sklearn.preprocessing import StandardScaler
-
-# # Load the merged dataset
-# merged_df = pd.read_csv('sp_500_sentiment.csv')
-
-# # Drop rows with missing values
-# merged_df = merged_df.dropna(subset=['Pct_Change', 'Sentiment'])
-
-# # Prepare data for clustering
-# X = merged_df[['Sentiment', 'Pct_Change']].values
-
-# # Optional: Standardize the data
-# scaler = StandardScaler()
-# X_scaled = scaler.fit_transform(X)
-
-# # Choose number of clusters (you can tweak this)
-# k = 3
-# kmeans = KMeans(n_clusters=k, random_state=42)
-# merged_df['Cluster'] = kmeans.fit_predict(X_scaled)
-
-# # Plot clusters
-# plt.figure(figsize=(10, 6))
-# colors = ['red', 'green', 'blue', 'purple', 'orange']
-
-# for i in range(k):
-#     cluster = merged_df[merged_df['Cluster'] == i]
-#     plt.scatter(cluster['Sentiment'], cluster['Pct_Change'], 
-#                 label=f'Cluster {i}', alpha=0.6, color=colors[i % len(colors)])
-
-# # Plot centroids (convert back to original scale)
-# centroids = scaler.inverse_transform(kmeans.cluster_centers_)
-# plt.scatter(centroids[:, 0], centroids[:, 1], 
-#             s=200, c='black', marker='X', label='Centroids')
-
-# # Labels and title
-# plt.title('K-Means Clustering: News Sentiment vs S&P500 % Change', fontsize=14)
-# plt.xlabel('News Sentiment', fontsize=12)
-# plt.ylabel('S&P500 % Change', fontsize=12)
-# plt.legend()
-# plt.grid(True)
-
-# # Show
-# plt.show()
-
-# # Pearson correlation coefficient
-# corr = np.corrcoef(merged_df['Sentiment'], merged_df['Pct_Change'])[0, 1]
-# print(f"Pearson correlation coefficient: {corr:.3f}")
-
-# # NEW: Sentiment Polarity Analysis
-# positive = merged_df[merged_df['Sentiment'] > 0]
-# negative = merged_df[merged_df['Sentiment'] < 0]
-# neutral = merged_df[merged_df['Sentiment'] == 0]
-
-# print("\nSentiment Polarity Group Statistics:")
-# print(f"Positive Sentiment Count: {len(positive)} | Avg % Change: {positive['Pct_Change'].mean():.3f}")
-# print(f"Negative Sentiment Count: {len(negative)} | Avg % Change: {negative['Pct_Change'].mean():.3f}")
-# print(f"Neutral Sentiment Count: {len(neutral)} | Avg % Change: {neutral['Pct_Change'].mean():.3f}")
-
-
 # lagged sentiment:
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -69,7 +6,7 @@ from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
 # Load and clean data
-merged_df = pd.read_csv('sp_500_sentiment.csv')
+merged_df = pd.read_csv('datasets/sp_500_sentiment.csv')
 merged_df = merged_df.dropna(subset=['Pct_Change', 'Sentiment'])
 
 # Shift % Change upward to align tomorrow's change with today's sentiment

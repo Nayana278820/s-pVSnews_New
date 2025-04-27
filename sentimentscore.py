@@ -6,7 +6,7 @@ import nltk
 nltk.download('vader_lexicon')
 
 # Load your CSV
-news_df = pd.read_csv('cleanedNews_data.csv')
+news_df = pd.read_csv('datasets/cleanedNews_data.csv')
 
 # Initialize the VADER sentiment analyzer
 sid = SentimentIntensityAnalyzer()
@@ -15,6 +15,7 @@ sid = SentimentIntensityAnalyzer()
 news_df['Sentiment'] = news_df['Headlines'].apply(lambda x: sid.polarity_scores(str(x))['compound'])
 
 # Save the result to a new CSV
-news_df.to_csv('news_with_sentiment.csv', index=False)
+news_df.to_csv('datasets/news_with_sentiment.csv', index=False)
 
-print("✅ Sentiment scores added! Saved as news_with_sentiment.csv")
+print("Sentiment scores added! Saved as news_with_sentiment.csv")
+

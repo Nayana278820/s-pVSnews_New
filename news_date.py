@@ -3,7 +3,7 @@ import re
 from datetime import datetime
 
 # Load the original CSV
-df = pd.read_csv('cnbc_headlines.csv')
+df = pd.read_csv('datasets/cnbc_headlines.csv')
 
 # Month abbreviation to full month mapping (including "Sept")
 month_mapping = {
@@ -36,6 +36,6 @@ def extract_date(time_str):
 df['Date'] = df['Time'].apply(lambda x: extract_date(x) if pd.notnull(x) else None)
 
 # Save cleaned data
-df.to_csv('cleanedNews_data.csv', index=False)
+df.to_csv('datasets/cleanedNews_data.csv', index=False)
 
-print("✅ New CSV file 'cleanedNews_data.csv' created with reformatted dates.")
+print("New CSV file 'cleanedNews_data.csv' created with reformatted dates.")

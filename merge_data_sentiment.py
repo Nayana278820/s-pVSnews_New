@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Load both datasets
-sp500_df = pd.read_csv('sp500_data.csv')
-news_df = pd.read_csv('news_with_sentiment.csv')
+sp500_df = pd.read_csv('datasets/sp500_data.csv')
+news_df = pd.read_csv('datasets/news_with_sentiment.csv')
 
 # Convert 'Date' to datetime format in both datasets
 sp500_df['Date'] = pd.to_datetime(sp500_df['Date']).dt.date
@@ -18,6 +18,6 @@ news_grouped = news_df.groupby('Date').agg({
 sp500_df = pd.merge(sp500_df, news_grouped[['Date', 'Sentiment']], on='Date', how='left')
 
 # Save the updated sp500 dataset with a separate 'Sentiment' column to a new CSV
-sp500_df.to_csv('sp_500_sentiment.csv', index=False)
+sp500_df.to_csv('datasets/sp_500_sentiment.csv', index=False)
 
-print("✅ Sentiment added to the sp500 data. File saved as sp_500_sentiment.csv")
+print("Sentiment added to the sp500 data. File saved as sp_500_sentiment.csv")

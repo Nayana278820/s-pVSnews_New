@@ -16,4 +16,4 @@ sp500_df['Pct_Change'] = sp500_df['Close_^GSPC'].pct_change() * 100
 # Save to CSV
 sp500_df.to_csv('sp500_data.csv', index=False)
 
-print("✅ Data saved successfully!")
+print("Data saved successfully!")
