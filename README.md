@@ -101,9 +101,11 @@ python future_price_prediction.py
 ## Author
 
 **Pooja Masani**  
+NetID: pmasani
 Computer Science @ UTK  
 
 
 **Nayana Patil**  
+NetID: spatil12
 Computer Science @ UTK  
 
